@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+clear
+echo -e "\033[1;46m \033[1;31mDDBOOT                                                           Version- 0.01 \033[0m"
+        echo "                        SELECT THE DEVICE TO BE USED"
+echo -e "\033[1;47m                                                                                \033[0m"
+echo " "
+echo -e "TYPE YOUR PASSWORD AND \033[1;36mWAIT FOR THE LIST OF DEVICES \033[0m!!!"
+echo -e "\033[1;47m                                                          \033[0m"
+echo -e "\033[1;46m                                               Powerby DCG\033[0m"
+
+sudo fdisk -l | grep Disc | sed 's/, .*//g'
+
+echo -e "\033[1;46m                                                                                \033[0m"
+echo -e "\033[1;47m                                                                                \033[0m"
+echo -e "\033[1;36mEnter only the disk identifier\033[0m  \033[1;35m/dev/sd?\033[0m >>>| \c"
+
+read disc
+
+[[ ! -z $disc ]]
+
+sleep 2
+clear
+
+echo -e "\033[1;46m                                                                                \033[0m"
+echo -e "\033[1;46m                                                                                \033[0m"
+        echo "                         WHAT ISO WOULD YOU LIKE TO USE?"
+echo -e "\033[1;47m                                                                                \033[0m"
+echo -e "\033[1;47m                                                                                \033[0m"
+
+        echo -e "\033[1;34mCOPY AND PASTE THE ISO HERE\033[0m >>>| \c"
+
+
+read iso
+
+[[ ! -z $iso ]] && sudo dd if=$iso of=$disc status=progress
+clear
+echo -e "\033[1;46m                                                                                \033[0m"
+echo -e "\033[1;47m                                                                                \033[0m"
+        echo -e "         \033[1;33mALL READY!!! YOU CAN ALREADY USE YOUR BOOTABLE DEVICE.            "
+echo -e "\033[1;47m                                                                                \033[0m"
+echo -e "\033[1;46m                                                                                \033[0m"
+
+
